@@ -5,7 +5,10 @@ import { Transition } from '@headlessui/react'
 import Image from 'next/image'
 import FeaturesBg from '@/public/images/features-bg.png'
 import FeaturesElement from '@/public/images/features-element.png'
-import Peces from '@/components/Peces';
+import { motion, AnimatePresence } from 'framer-motion';
+import FishCarousel from './Carrusel/FishCarousel';
+
+import pez from '#/pez1.jpg';
 
 export default function Features() {
   
@@ -16,15 +19,24 @@ export default function Features() {
   const heightFix = () => {
     if (tabs.current && tabs.current.parentElement) tabs.current.parentElement.style.height = `${tabs.current.clientHeight}px`
   }
-  const objetos = [
-    { imagen: 'Image', titulo: 'Título 1' },
-    { imagen: 'Image', titulo: 'Título 2' },
-    { imagen: 'Image', titulo: 'Título 3' },
+
+  const images = [
+    { id: 1, src: pez.src, nombre: 'Pez 1' },
+    { id: 2, src: pez.src, nombre: 'Pez 2' },
+    { id: 3, src: pez.src, nombre: 'Pez 3' },
+    { id: 4, src: pez.src, nombre: 'Pez 4' },
+    { id: 5, src: pez.src, nombre: 'Pez 5' },
+    { id: 6, src: pez.src, nombre: 'Pez 6' },
+    { id: 7, src: pez.src, nombre: 'Pez 7' },
+    { id: 8, src: pez.src, nombre: 'Pez 8' },
+    { id: 9, src: pez.src, nombre: 'Pez 9' },
+    { id: 10, src: pez.src, nombre: 'Pez 10' },
+    { id: 11, src: pez.src, nombre: 'Pez 11' },
+    { id: 12, src: pez.src, nombre: 'Pez 12' },
   ];
-  
   useEffect(() => {
     heightFix()
-  }, []) 
+  }, [])
 
   return (
     <section className="relative">
@@ -34,13 +46,13 @@ export default function Features() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="">
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Los peces que tenemos</h1>
-            <p className="text-xl text-gray-600">Contamos con una gran variedad de peces criados en condiciones optimas</p>
-            <Peces />
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="h1 mb-4">Nuestro catálogo</h1>
+            <p className="text-xl text-gray-600">Contamos con una gran variedad de peces de ornato</p>
           </div>
-          
-
+          <div>
+          <FishCarousel images={images} />
+        </div>
 
           {/* Section content */}
           <div className="md:grid md:grid-cols-12 md:gap-6">

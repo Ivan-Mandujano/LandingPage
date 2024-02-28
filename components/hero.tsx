@@ -4,6 +4,8 @@ import Banner from "#/banner.png"
 import Image from 'next/image'
 
 export default function Hero() {
+
+  
   return (
     <section className="relative">
 
@@ -27,18 +29,26 @@ export default function Hero() {
       <div className="relative h-screen overflow-hidden">
 
 {/* Hero content */}
-<div className="absolute inset-0 flex items-center justify-center">
+<div className="relative w-full h-screen overflow-hidden">
 
-  {/* Hero image */}
-  <img src={Banner.src} alt="banner" className="w-full h-60 md:h-full object-cover" />
+  {/* Hero content */}
+  <div className="absolute inset-0 flex items-center justify-center">
 
-  {/* Texto centrado */}
-  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-    <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Acuario <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Keolmar</span></h1>
-    <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150"></p>
-    <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300"></div>
+    {/* Hero image */}
+    <img
+      src={Banner.src}
+      alt="banner"
+      className="w-full h-full object-cover object-center"
+    />
+
+    {/* Texto centrado */}
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+      <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Acuario <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Keolmar</span></h1>
+      <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150"></p>
+      <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300"></div>
+    </div>
+
   </div>
-
 </div>
 
 </div>
