@@ -6,7 +6,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation'; // Importa los estilos de navegación
 
 interface FishCarouselProps {
-  images: { id: number; src: string; nombre: string }[];
+  images: { id: number; src: string; nombre: string; descripcion: string}[];
 }
 
 const FishCarousel: React.FC<FishCarouselProps> = ({ images }) => {
@@ -37,7 +37,7 @@ const FishCarousel: React.FC<FishCarouselProps> = ({ images }) => {
                 <img src={item.src} alt={item.nombre} className="w-full h-full object-cover rounded-xl" />
                   <div className="flex flex-col items-center mt-auto">
                     <h2 className="text-black lg:text-xl">{item.nombre}</h2>
-                    <p className="text-gray-400 text-sm lg:text-base">Información adicional</p>
+                    <p className="text-gray-400 text-sm lg:text-base">{item.descripcion}</p>
                   </div>
                 </div>
               </SwiperSlide>
